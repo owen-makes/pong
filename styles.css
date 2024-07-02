@@ -2,6 +2,11 @@
   box-sizing: border-box;
 }
 
+@font-face{
+  font-family: 'bit5x3';
+  src: url("bit5x3.ttf") format('truetype');
+}
+
 body{
   margin: 0;
   background-color: var(--background);
@@ -11,8 +16,8 @@ body{
 :root{
   --hue: 200;
   --saturation: 50%;
-  --foreground: hsl(var(--hue),var(--saturation), 75%);
-  --background: hsl(var(--hue),var(--saturation), 20%);
+  --foreground: #f90;
+  --background: black;
 }
 
 .paddle {
@@ -24,6 +29,7 @@ body{
   transform: translateY(-50%);
   width: 1vh;
   height: 10vh;
+  box-shadow: 0 0 25px 1px #fbcd62;  /* inner white */
 }
 
 .paddle.left{
@@ -45,13 +51,13 @@ body{
   transform: translate(-50%, -50%);
   width: 2.5vh;
   height: 2.5vh;
-  border-radius: 100%;
+  border-radius: 0%;
+  box-shadow: 0 0 25px 1px #fbcd62; 
 }
 
 .score{
   display: flex;
   justify-content: center;
-  font-weight: bold;
   font-size: 7vh;
   color: var(--foreground);
 }
@@ -60,11 +66,14 @@ body{
   flex-grow: 1;
   flex-basis: 0;
   padding: 2vh;
-  opacity: .5;
   margin: 1vh 0;
+  font-family: 'bit5x3';
+  text-shadow: #fbcd62 1px 4px 18px;
 }
+
 
 .score > :first-child{
   text-align: right;
   border-right: .5vh solid;
 }
+
